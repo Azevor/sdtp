@@ -54,7 +54,9 @@
         <script>
             window.onload = function () {
                 // const socket = io('localhost:5000');
-                const socket = io(`0.0.0.0:${int(os.environ["PORT"].rstrip())}`);
+                const porta = int(os.environ["PORT"].rstrip());
+                const socket = io(`0.0.0.10:${porta}`);
+                console.log(`Número da porta = ${porta}`);
                 socket.on('connect', () => {
                     socket.send('Usuário conectado ao socket!')
                 });
