@@ -31,4 +31,4 @@ def message_handler(msg):
 Arquivo principal (rodar a aplicação)
 '''
 if __name__ == "__main__":
-    io.run(app, debug=True)
+    io.run(app, host='https://sdtp.azurewebsites.net', port='80', debug=True)
