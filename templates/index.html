@@ -53,14 +53,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             window.onload = function () {
-
-                const io = require('socket.io')(80);
-                const cfg = require('./config.json');
-                const socket = require('node-tweet-stream')(cfg);
-                socket.track('socket.io');
-                socket.track('javascript');
-
                 // const socket = io('localhost:5000');
+                const socket = io('https://sdtp.azurewebsites.net:80');
                 socket.on('connect', () => {
                     socket.send('Usuário conectado ao socket!')
                 });
