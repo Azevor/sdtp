@@ -4,6 +4,7 @@ from flask_socketio import SocketIO, emit, send
 
 
 app = Flask(__name__)
+io = SocketIO(app)
 messages = []
 
 
@@ -23,4 +24,4 @@ def message_handler(msg):
 
 if __name__ == '__main__':
 	#app.run()
-	SocketIO.run(app, host='https://sdtp.azurewebsites.net', port='80', debug=True)
+	io.run(app, host='https://sdtp.azurewebsites.net', port='80', debug=True)
