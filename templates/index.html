@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/awesome-lineca-vol-3/17/themify-favicon-alt-512.png"
-        type="image/x-icon">
+    type="image/x-icon">
     <title>Chat IO</title>
 
     <style>
@@ -48,13 +48,19 @@
 
     <footer>
         <!-- https://cdnjs.com/libraries/socket.io -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
-            integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-        <!-- <script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
+        integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
             window.onload = function () {
+
+                const io = require('socket.io')(80);
+                const cfg = require('./config.json');
+                const socket = require('node-tweet-stream')(cfg);
+                socket.track('socket.io');
+                socket.track('javascript');
+
                 // const socket = io('localhost:5000');
-                const socket = io('http://191.235.228.35:80');
                 socket.on('connect', () => {
                     socket.send('Usuário conectado ao socket!')
                 });
@@ -84,7 +90,7 @@
                     }
                 });
             }
-        </script> -->
+        </script>
     </footer>
 </body>
 
