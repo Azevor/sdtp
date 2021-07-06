@@ -1,4 +1,0 @@
-Flask
-Flask-socketio
-gevent
-gevent-websocket
