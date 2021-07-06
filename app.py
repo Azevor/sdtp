@@ -10,4 +10,5 @@ def home():
     return ("Teste 1", 200)
 
 
-app.run()
+if __name__ == '__main__':
+	app.run()
