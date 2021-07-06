@@ -23,5 +23,6 @@ def message_handler(msg):
     send(messages)
 
 if __name__ == '__main__':
-	#app.run()
-	io.run(app, host='https://sdtp.azurewebsites.net', port='80', debug=True)
+	# app.run()
+	# io.run(app, host='https://sdtp.azurewebsites.net', port='80', debug=True)
+	io.run(app, host="0.0.0.0",port=int(os.environ["PORT"].rstrip()))
