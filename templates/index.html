@@ -51,7 +51,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             window.onload = function () {
-                const socket = io('localhost:5000');
+                const socket = io('172.16.0.5:5000');
                 socket.on('connect', () => {
                     socket.send('Usuário conectado ao socket!')
                 });
