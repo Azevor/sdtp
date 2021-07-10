@@ -32,7 +32,7 @@
 
     <main>
         <div class="chat">
-            <strong>Teste:</strong> <i>202107092050</i>
+            <strong>Teste:</strong> <i>202107092245</i>
         </div>
 
         <form>
@@ -44,16 +44,14 @@
 
     <footer>
         <!-- https://cdnjs.com/libraries/socket.io -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
-            integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script>
         <script>
             window.onload = function () {
                 // const socket = io.connect('localhost:5000');
-                const socket = io.connect('http://sdtp.azurewebsites.net');
-                // socket.on('connect', () => {
-                //     socket.send('Usuário conectado ao socket!')
-                // });
+                const socket = io.connect('ws://sdtp.azurewebsites.net');
+                socket.on('connect', function() {
+                    socket.send('Usuário conectado ao socket!')
+                });
 
                 function addToChat(msg) {
                     const span = document.createElement("span");
