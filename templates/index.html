@@ -32,9 +32,7 @@
 
     <main>
         <div class="chat">
-            <strong>Fulano:</strong> <i>mensagem de Fulano</i>
-            <strong>Fulano:</strong> <i>mensagem de Fulano</i>
-            <strong>Fulano:</strong> <i>mensagem de Fulano</i>
+            <strong>Teste:</strong> <i>202107092050</i>
         </div>
 
         <form>
@@ -51,14 +49,15 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             window.onload = function () {
-                const socket = io('172.16.0.255:5000');
-                socket.on('connect', () => {
-                    socket.send('Usuário conectado ao socket!')
-                });
+                // const socket = io.connect('localhost:5000');
+                const socket = io.connect('http://sdtp.azurewebsites.net');
+                // socket.on('connect', () => {
+                //     socket.send('Usuário conectado ao socket!')
+                // });
 
                 function addToChat(msg) {
                     const span = document.createElement("span");
-                    const chat = document.querySelector(".chat")
+                    const chat = document.querySelector(".chat");
                     span.innerHTML = `<strong>${msg.name}:</strong> <i>${msg.message}</i>`;
                     chat.append(span);
                 }
