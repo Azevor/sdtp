@@ -48,7 +48,7 @@
         <script>
             window.onload = function () {
                 // const socket = io.connect('localhost:5000');
-                const socket = io.connect('ws://sdtp.azurewebsites.net');
+                const socket = io.connect('https://sdtp.azurewebsites.net');
                 socket.on('connect', function() {
                     socket.send('Usuário conectado ao socket!')
                 });
@@ -68,11 +68,11 @@
                     event.target[1].value = "";
                 });
 
-                socket.on('getMessage', (msg) => {
+                socket.on('getMessage', function(msg) {
                     addToChat(msg);
                 });
 
-                socket.on('message', (msgs) => {
+                socket.on('message', function(msgs) {
                     for (msg of msgs) {
                         addToChat(msg);
                     }
